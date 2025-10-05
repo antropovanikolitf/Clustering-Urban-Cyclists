@@ -39,7 +39,7 @@ This project applies unsupervised clustering to reveal distinct trip behavior pa
 
 ## SMART Goal
 
-**S**pecific: Cluster bike-share trip records into 4–6 interpretable segments (e.g., commuters, tourists, casual, last-mile).
+**S**pecific: Cluster bike-share trip records into 4-6 interpretable segments (e.g., commuters, tourists, casual, last-mile).
 
 **M**easurable:
 - Achieve silhouette score ≥ 0.35 (indicating reasonable cluster separation)
@@ -106,11 +106,11 @@ This project applies unsupervised clustering to reveal distinct trip behavior pa
 
 | Week | Capstone | Deliverable |
 |------|----------|-------------|
-| 1–2  | 1        | Framing docs + notebook |
-| 3–4  | 2        | Data prep pipeline + cleaned dataset |
-| 5–7  | 3        | Clustering experiments + champion model |
-| 8–9  | 4        | Evaluation + visualizations |
-| 10–12| 5        | Impact reports + executive summary |
+| 1-2  | 1        | Framing docs + notebook |
+| 3-4  | 2        | Data prep pipeline + cleaned dataset |
+| 5-7  | 3        | Clustering experiments + champion model |
+| 8-9  | 4        | Evaluation + visualizations |
+| 10-12| 5        | Impact reports + executive summary |
 
 ---
 

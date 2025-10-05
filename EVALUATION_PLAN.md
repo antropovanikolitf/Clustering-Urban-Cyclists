@@ -21,7 +21,7 @@ where:
 **Target**: ≥ 0.35 (acceptable separation)
 **Interpretation**:
 - > 0.5: Strong, well-separated clusters
-- 0.25–0.5: Moderate separation (acceptable if interpretable)
+- 0.25-0.5: Moderate separation (acceptable if interpretable)
 - < 0.25: Weak clustering (consider alternative features or algorithms)
 
 **Why This Metric**:
@@ -45,7 +45,7 @@ where:
 **Target**: < 1.5 (tight, well-separated clusters)
 **Interpretation**:
 - < 1.0: Excellent clustering
-- 1.0–2.0: Acceptable
+- 1.0-2.0: Acceptable
 - > 2.0: Poor separation (clusters overlap)
 
 **Why This Metric**:
@@ -70,10 +70,10 @@ where:
 ### 4. Interpretability & Domain Alignment
 **Definition**: Do clusters match known mobility patterns?
 **Validation Criteria**:
-- **Commuter cluster**: Weekday AM/PM peaks (7–9 AM, 5–7 PM), short duration (<20 min), high `is_member`
-- **Tourist cluster**: Weekend midday (11 AM–3 PM), long duration (30+ min), low `is_member`, round trips
+- **Commuter cluster**: Weekday AM/PM peaks (7-9 AM, 5-7 PM), short duration (<20 min), high `is_member`
+- **Tourist cluster**: Weekend midday (11 AM-3 PM), long duration (30+ min), low `is_member`, round trips
 - **Last-mile cluster**: Very short (<10 min), near transit hubs (subway stations)
-- **Casual/errand cluster**: Mid-duration (15–30 min), off-peak hours, mixed weekday/weekend
+- **Casual/errand cluster**: Mid-duration (15-30 min), off-peak hours, mixed weekday/weekend
 
 **Method**: Aggregate cluster profiles (mean duration, hour, weekday) and compare to hypotheses.
 

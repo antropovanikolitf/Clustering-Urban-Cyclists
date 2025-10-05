@@ -24,13 +24,13 @@ This log tracks all major methodological, technical, and strategic decisions mad
 
 **Decision**:
 - Focus on bike-share trip behavior (not user demographics or station-level analysis)
-- Target 4–6 interpretable clusters (commuters, tourists, casual, last-mile)
-- Use CitiBike NYC data (Spring/Summer 2025: Mar–Jun)
+- Target 4-6 interpretable clusters (commuters, tourists, casual, last-mile)
+- Use CitiBike NYC data (Spring/Summer 2025: Mar-Jun)
 - Deliver 5 capstones: framing, data prep, clustering, evaluation, impact reporting
 
 **Rationale**:
 - Trip-level clustering addresses stakeholder needs (city planners, bike-share operators)
-- CitiBike is largest US system with open data (3–5M trips/month)
+- CitiBike is largest US system with open data (3-5M trips/month)
 - Spring/summer timeframe balances sample size (~10M+ trips) with computational feasibility
 - 5-capstone structure aligns with course requirements
 
@@ -50,7 +50,7 @@ This log tracks all major methodological, technical, and strategic decisions mad
 **Decision**: Use 7 core features:
 1. `duration_min` (trip duration in minutes)
 2. `trip_distance_km` (Haversine distance)
-3. `start_hour` (hour of day, 0–23)
+3. `start_hour` (hour of day, 0-23)
 4. `weekday` (day of week, 0=Mon, 6=Sun)
 5. `is_weekend` (binary: 1 if Sat/Sun, else 0)
 6. `is_member` (binary: 1 if subscriber, else 0)
@@ -78,9 +78,9 @@ This log tracks all major methodological, technical, and strategic decisions mad
 **Context**: Need to choose clustering algorithms for comparison.
 
 **Decision**: Compare 3 algorithms:
-1. **K-Means** (k ∈ {3, 4, 5, 6, 7}) – baseline, fast, interpretable
-2. **Agglomerative Hierarchical** (k=5, ward linkage) – validate K-Means, explore hierarchy
-3. **DBSCAN** (tune eps via k-distance plot) – discover non-spherical clusters, handle noise
+1. **K-Means** (k ∈ {3, 4, 5, 6, 7}) - baseline, fast, interpretable
+2. **Agglomerative Hierarchical** (k=5, ward linkage) - validate K-Means, explore hierarchy
+3. **DBSCAN** (tune eps via k-distance plot) - discover non-spherical clusters, handle noise
 
 **Rationale**:
 - **K-Means**: Standard for trip clustering (Hampshire et al., 2013); fast; interpretable centroids
@@ -134,7 +134,7 @@ This log tracks all major methodological, technical, and strategic decisions mad
 5. Cap `trip_distance_km` at 99th percentile (~10 km)
 
 **Rationale**:
-- **Missing coords/stations**: Cannot compute distance or interpret spatially (5–7% of trips)
+- **Missing coords/stations**: Cannot compute distance or interpret spatially (5-7% of trips)
 - **Duration <1 min**: Likely test trips or docking errors
 - **Duration >3 hrs**: Likely user forgot to end trip (CitiBike charges overage fees at 30/45 min → genuine trips rarely exceed 2 hrs)
 - **Capping at 99th percentile**: Preserves tail behavior while reducing extreme outlier influence
@@ -145,7 +145,7 @@ This log tracks all major methodological, technical, and strategic decisions mad
 
 **Next Step**:
 - Implement filters in `src/loaders.py` (Capstone 2)
-- Run diagnostics to verify expected 5–7% data loss
+- Run diagnostics to verify expected 5-7% data loss
 
 ---
 
@@ -176,10 +176,10 @@ This log tracks all major methodological, technical, and strategic decisions mad
 **Context**: Need to implement cleaning strategy defined in DECISIONS_LOG and execute full preprocessing pipeline.
 
 **Decision**: Built 4 Python modules and fully populated Capstone 2 notebook:
-- `src/paths.py` – Centralized path management
-- `src/loaders.py` – CSV loading with schema validation
-- `src/diagnostics.py` – Data quality checks + 4 EDA plots
-- `src/preprocess.py` – Cleaning, feature engineering, scaling pipeline
+- `src/paths.py` - Centralized path management
+- `src/loaders.py` - CSV loading with schema validation
+- `src/diagnostics.py` - Data quality checks + 4 EDA plots
+- `src/preprocess.py` - Cleaning, feature engineering, scaling pipeline
 
 **Rationale**:
 - **Modular design**: Reusable functions for Capstones 3-5
@@ -233,9 +233,9 @@ This log tracks all major methodological, technical, and strategic decisions mad
 
 **Implementation Details**:
 - **Modules created**:
-  - `src/clustering.py` – KMeans, Agglomerative, DBSCAN + metrics (silhouette, DB, CH)
-  - `src/interpretation.py` – Cluster profiling, heatmaps, automatic naming logic
-  - `src/visualization.py` – PCA/t-SNE projections, feature importance, characteristics tables
+  - `src/clustering.py` - KMeans, Agglomerative, DBSCAN + metrics (silhouette, DB, CH)
+  - `src/interpretation.py` - Cluster profiling, heatmaps, automatic naming logic
+  - `src/visualization.py` - PCA/t-SNE projections, feature importance, characteristics tables
 
 - **Clustering results**: Champion model (K-Means k=5) with expected metrics:
   - Silhouette ≥ 0.35 (PASS)

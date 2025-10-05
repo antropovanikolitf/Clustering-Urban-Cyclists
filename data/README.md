@@ -25,7 +25,7 @@ Used for debugging and iterative development.
 Final cleaned and preprocessed datasets ready for clustering.
 
 **Expected Files** (created by Capstone 2):
-- `trips_clean.csv` – Cleaned trip data with derived features (duration, distance, start_hour, weekday, etc.)
+- `trips_clean.csv` - Cleaned trip data with derived features (duration, distance, start_hour, weekday, etc.)
 
 ---
 

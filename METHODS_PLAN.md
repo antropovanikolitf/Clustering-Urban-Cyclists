@@ -38,7 +38,7 @@ From CitiBike / similar bike-share trip CSVs:
 1. **Cleaning**: Drop rows with missing coords, negative durations, or outliers (>3 hours)
 2. **Scaling**: StandardScaler on numeric features (duration, distance, hour, weekday)
 3. **Encoding**: Already binary/numeric; no one-hot needed
-4. **Dimensionality Reduction** (optional): PCA to 5–10 components if dataset >500K trips
+4. **Dimensionality Reduction** (optional): PCA to 5-10 components if dataset >500K trips
 
 ---
 

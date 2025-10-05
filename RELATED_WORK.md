@@ -8,7 +8,7 @@ This document reviews prior research and case studies applying clustering and da
 ## Case Study 1: Clustering CitiBike Riders (New York)
 
 ### Citation
-*Rixey, R. (2013). "Station-level forecasting of bike sharing ridership: Station Network Effects in Three U.S. Systems." Transportation Research Record, 2387(1), 46–55.*
+*Rixey, R. (2013). "Station-level forecasting of bike sharing ridership: Station Network Effects in Three U.S. Systems." Transportation Research Record, 2387(1), 46-55.*
 
 ### Summary
 Rixey analyzed CitiBike trip data to forecast demand at individual stations, revealing distinct usage patterns:
@@ -76,7 +76,7 @@ Hampshire et al. clustered Capital Bikeshare (DC) trips using K-Means to inform 
 ### Relevance to Our Project
 - Validates our feature set (duration, hour, weekday, user type)
 - Shows K-Means is interpretable and actionable for policy
-- **Gap**: Limited to 3 clusters; we explore 4–6 for finer segmentation
+- **Gap**: Limited to 3 clusters; we explore 4-6 for finer segmentation
 
 ### Key Takeaway
 K-Means is fast, interpretable, and effective for trip behavior segmentation; combining multiple algorithms strengthens robustness.

@@ -14,11 +14,11 @@ This document describes the datasets used in this project, their provenance, acc
 
 ### Description
 Monthly CSV files containing individual bike-share trip records from New York City's CitiBike system.
-Typical timespan: 2013–present (updated monthly).
+Typical timespan: 2013-present (updated monthly).
 
 ### File Format
 - **Type**: CSV (gzip compressed)
-- **Size**: ~100–500 MB per month (uncompressed); ~2–5 million trips/month
+- **Size**: ~100-500 MB per month (uncompressed); ~2-5 million trips/month
 - **Naming Convention**: `YYYYMM-citibike-tripdata.csv.zip` (e.g., `202309-citibike-tripdata.csv.zip`)
 
 ### Expected Schema
@@ -40,7 +40,7 @@ Typical timespan: 2013–present (updated monthly).
 | `member_casual` | String | User type | `member` (subscriber), `casual` (pay-per-ride) |
 
 ### Data Collection Period (Planned)
-- **Timeframe**: 4 months (March–June 2025 for spring/summer season)
+- **Timeframe**: 4 months (March-June 2025 for spring/summer season)
 - **Rationale**: Balances sample size (~10M+ trips) with computational feasibility; captures transition from spring to peak summer usage
 - **Limitation**: Spring/summer bias (see DATA_FITNESS_ASSESSMENT.md)
 
@@ -69,7 +69,7 @@ Typical timespan: 2013–present (updated monthly).
 
 ### Download Instructions
 1. Visit [CitiBike System Data](https://citibikenyc.com/system-data)
-2. Download monthly CSV.zip files for desired timeframe (e.g., March–June 2025)
+2. Download monthly CSV.zip files for desired timeframe (e.g., March-June 2025)
 3. Extract CSVs to `data/raw/bikeshare/` folder
 4. Verify schema matches expected columns (run diagnostics in Capstone 2)
 
@@ -115,7 +115,7 @@ data/
 | **Original Collector** | Lyft (CitiBike operator) |
 | **Collection Method** | Automated logging (bike GPS + docking station sensors) |
 | **Update Frequency** | Monthly (published ~2 weeks after month end) |
-| **Historical Availability** | 2013–present |
+| **Historical Availability** | 2013-present |
 | **Quality Assurance** | Lyft performs basic validation (timestamp consistency, GPS bounds) |
 | **Known Issues** | Occasional missing station names, GPS drift, test trips |
 
@@ -139,12 +139,12 @@ data/
 ## Data Update Plan
 
 ### If More Data Needed
-- Download additional months (e.g., extend to Sept–Nov for seasonal comparison)
+- Download additional months (e.g., extend to Sept-Nov for seasonal comparison)
 - Merge CSVs using `src/loaders.py` (handles schema variations)
 - Re-run pipeline from Capstone 2 onward
 
 ### Version Control
-- **Current Version**: Spring/Summer 2025 (March–June)
+- **Current Version**: Spring/Summer 2025 (March-June)
 - **Logged in**: `data/README.md` (includes download date, file hashes for reproducibility)
 
 ---

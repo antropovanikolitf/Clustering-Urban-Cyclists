@@ -27,7 +27,7 @@ This document evaluates whether the CitiBike trip dataset is suitable for cluste
 
 **Evidence**:
 - ✅ Timestamps are machine-generated (docking station sensors) → high accuracy
-- ⚠️ GPS coordinates have ~10–30m drift (standard for consumer GPS) → acceptable for station-level analysis
+- ⚠️ GPS coordinates have ~10-30m drift (standard for consumer GPS) → acceptable for station-level analysis
 - ⚠️ Occasional outliers (e.g., `duration = 0`, `distance = 0`) → likely sensor errors; <1% of trips
 - ❌ Some trips have `started_at > ended_at` (clock skew) → must filter
 
@@ -53,7 +53,7 @@ This document evaluates whether the CitiBike trip dataset is suitable for cluste
 **Handling Missing Data**:
 - Drop rows where `start_lat` or `end_lat` is null (cannot compute distance)
 - Drop rows where `start_station_name` is null (cannot interpret station-level patterns)
-- Expected loss: ~5–7% of trips
+- Expected loss: ~5-7% of trips
 
 **Rating**: **Moderate** (acceptable for unsupervised learning; no imputation needed)
 
@@ -79,8 +79,8 @@ This document evaluates whether the CitiBike trip dataset is suitable for cluste
 
 **Evidence**:
 - ✅ Dataset updated monthly (lag ~2 weeks)
-- ✅ We will use Spring/Summer 2025 data (Mar–Jun) → reflects current post-pandemic usage patterns
-- ⚠️ COVID-19 impact: 2020–2021 data shows anomalies (reduced commuting, increased leisure)
+- ✅ We will use Spring/Summer 2025 data (Mar-Jun) → reflects current post-pandemic usage patterns
+- ⚠️ COVID-19 impact: 2020-2021 data shows anomalies (reduced commuting, increased leisure)
   → Using 2025 data fully captures post-pandemic stabilization
 
 **Rating**: **High** (recent, post-pandemic stabilization)
@@ -93,7 +93,7 @@ This document evaluates whether the CitiBike trip dataset is suitable for cluste
 **Evidence**:
 - ✅ **Geographic**: Covers all 5 NYC boroughs (Manhattan, Brooklyn, Queens, Bronx, Staten Island)
   → Caveat: 80% of stations in Manhattan/Brooklyn (outer boroughs underrepresented)
-- ⚠️ **Temporal**: Spring/Summer 2025 only (Mar–Jun) → seasonal bias (fall/winter may show different patterns)
+- ⚠️ **Temporal**: Spring/Summer 2025 only (Mar-Jun) → seasonal bias (fall/winter may show different patterns)
   → Limitation documented; recommend multi-season validation in future
 - ⚠️ **Demographic**: No age, gender, income data (privacy-preserved)
   → Cannot cluster by rider demographics; only behavior (acceptable for our goal)
@@ -138,8 +138,8 @@ This document evaluates whether the CitiBike trip dataset is suitable for cluste
    - `trip_distance_km`: Clip to 99th percentile (~10 km)
 
 ### Expected Data Loss
-- **Before cleaning**: ~3–5 million trips/month × 3 months = 9–15M trips
-- **After cleaning**: ~8.5–14M trips (5–7% loss)
+- **Before cleaning**: ~3-5 million trips/month × 3 months = 9-15M trips
+- **After cleaning**: ~8.5-14M trips (5-7% loss)
 - **Sufficient for clustering**: Yes (>1M trips ensures stable clusters)
 
 ---
@@ -195,7 +195,7 @@ This document evaluates whether the CitiBike trip dataset is suitable for cluste
 **Weaknesses**:
 - Seasonal bias (summer only)
 - Geographic skew (Manhattan/Brooklyn dominant)
-- 5–7% missing data (acceptable loss)
+- 5-7% missing data (acceptable loss)
 
 **Next Steps**:
 1. Implement cleaning pipeline in `src/loaders.py` and `src/preprocess.py` (Capstone 2)
