@@ -205,5 +205,5 @@ This document evaluates whether the CitiBike trip dataset is suitable for cluste
 ---
 
 **Last Updated:** 2025-10-04
-**Assessed By:** [Student Name]
+**Assessed By:** Nicoli Antropova
 **Review Status:** Ready for Capstone 2 pipeline development

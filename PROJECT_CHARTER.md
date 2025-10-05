@@ -114,6 +114,6 @@ This project applies unsupervised clustering to reveal distinct trip behavior pa
 
 ---
 
-**Approved by:** [Student Name / Instructor]
+**Approved by:** Nicoli Antropova
 **Date:** 2025-10-04
 **Version:** 1.0

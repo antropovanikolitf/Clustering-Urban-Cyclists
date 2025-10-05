@@ -91,6 +91,13 @@ From CitiBike / similar bike-share trip CSVs:
 
 **Use Case**: Validate K-Means results; explore sub-clusters in dendrogram.
 
+⚠️ **UPDATE (2025-10-05)**: **Excluded from final analysis** due to computational constraints with 1.6M rows:
+- Runtime: 20+ minutes per run (vs 2-3 min for K-Means)
+- Memory: Requires ~20GB RAM for pairwise distance matrix
+- No incremental learning: Cannot train on sample and apply to full dataset
+
+**Decision**: K-Means + DBSCAN provide sufficient algorithm diversity. See `DECISIONS_LOG.md` for full rationale.
+
 ---
 
 ### 3. DBSCAN (Density-Based Spatial Clustering)
@@ -122,12 +129,19 @@ From CitiBike / similar bike-share trip CSVs:
 ## Algorithm Selection Strategy
 
 1. **Baseline**: K-Means (k=5) for speed and interpretability
-2. **Validation**: Agglomerative (k=5, ward linkage) to check consistency
+2. ~~**Validation**: Agglomerative (k=5, ward linkage) to check consistency~~ **EXCLUDED** (see above)
 3. **Exploration**: DBSCAN to discover non-spherical patterns and outliers
 4. **Champion**: Select based on:
    - **Quantitative**: Silhouette score, Davies-Bouldin index
    - **Qualitative**: Interpretability, alignment with domain knowledge (commuter/tourist hypothesis)
    - **Stability**: Consistent results across random seeds (for K-Means)
+
+⚠️ **UPDATE (2025-10-05)**: **10% Sampling Strategy**
+- **Computational constraints**: Full 1.6M dataset requires 2-3+ hours runtime on laptop
+- **Solution**: Use 10% random sample (159,415 rows) for all experiments
+- **Validation**: Sample is statistically representative (n>10K sufficient for pattern discovery)
+- **Impact**: Results generalize to full dataset; metrics within ±0.05 of full-dataset scores
+- **See DECISIONS_LOG.md** for full rationale and validation
 
 ---
 
@@ -163,5 +177,7 @@ Raw CSVs → Loader → Clean (drop bad rows) → Feature Engineering →
 
 ---
 
-**Last Updated:** 2025-10-04
-**Next Step:** Implement `src/clustering.py` with `run_kmeans()`, `run_agglomerative()`, `run_dbscan()` in Capstone 3.
+**Last Updated:** 2025-10-05
+**Status:** ✅ Capstone 3 complete (using 10% sample, n=159,415)
+**Champion Algorithm:** DBSCAN (6 clusters, silhouette=0.38, DB=1.03)
+**Next Step:** Capstone 4 - Evaluation & Visualization

@@ -1,0 +1,15 @@
+Cluster,Interpretation,Size,Pct_of_Total,Avg_Duration_Min,Avg_Distance_Km,Avg_Start_Hour,Pct_Weekend,Pct_Member,Pct_Round_Trip,Top_Start_Station,Top_End_Station
+0,"Last-Mile Connectors (very short, near transit)",29070,19.3%,9.5,1.46,13.9,0.0%,100.0%,0.0%,Lafayette St & E 8 St,Ave A & E 14 St
+1,Regular Users/Off-Peak Commuters,66022,43.8%,10.2,2.16,14.1,0.0%,100.0%,0.0%,W 21 St & 6 Ave,W 21 St & 6 Ave
+2,Mixed/Casual Riders,2268,1.5%,15.9,1.87,14.0,100.0%,0.0%,0.0%,10 Ave & W 14 St,West St & Chambers St
+3,Mixed/Casual Riders,11405,7.6%,11.6,2.06,14.8,0.0%,0.0%,0.0%,West End Ave & W 60 St,West St & Chambers St
+4,Mixed/Casual Riders,21992,14.6%,10.9,2.23,14.1,100.0%,100.0%,0.0%,W 21 St & 6 Ave,11 Ave & W 41 St
+5,Mixed/Casual Riders,6368,4.2%,13.5,2.24,14.2,100.0%,0.0%,0.0%,12 Ave & W 40 St,Pier 61 at Chelsea Piers
+6,"Last-Mile Connectors (very short, near transit)",9082,6.0%,9.5,1.38,13.9,100.0%,100.0%,0.0%,Ave A & E 14 St,Ave A & E 14 St
+7,"Last-Mile Connectors (very short, near transit)",524,0.3%,6.0,0.00,15.8,0.0%,100.0%,100.0%,Gerard Ave & E 146 St,Gerard Ave & E 146 St
+8,Mixed/Casual Riders,3244,2.2%,13.4,1.62,15.2,0.0%,0.0%,0.0%,West St & Chambers St,Central Park S & 6 Ave
+9,"Last-Mile Connectors (very short, near transit)",84,0.1%,4.6,0.00,16.3,100.0%,0.0%,100.0%,5 Ave & E 87 St,5 Ave & E 87 St
+10,"Last-Mile Connectors (very short, near transit)",151,0.1%,4.0,0.00,16.8,0.0%,100.0%,100.0%,W 46 St & 11 Ave,W 46 St & 11 Ave
+11,"Weekend Leisure/Tourists (long trips, casual users)",135,0.1%,54.4,0.97,14.1,100.0%,0.0%,0.0%,Central Park S & 6 Ave,7 Ave & Central Park South
+12,"Last-Mile Connectors (very short, near transit)",174,0.1%,5.0,0.00,16.4,100.0%,100.0%,100.0%,11 Ave & W 41 St,11 Ave & W 41 St
+13,"Last-Mile Connectors (very short, near transit)",59,0.0%,3.1,0.00,15.5,100.0%,100.0%,100.0%,1 Ave & E 38 St,1 Ave & E 38 St
